@@ -3,7 +3,7 @@ import * as chai from "chai";
 import chaiHttp = require ("chai-http");
 import "mocha";
 
-chai.user(chaiHttp);
+chai.use(chaiHttp);
 const expect = chai.expect;
 
 describe("API Request", () => {
@@ -12,7 +12,7 @@ describe("API Request", () => {
     .request(app)
     .get("/")
     .then(res => {
-      chai.expect(res.text).to.eql("hello");
+      chai.expect(res.text).to.eql("hello world");
     });
   });
 });
